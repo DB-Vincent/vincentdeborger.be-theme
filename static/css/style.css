@@ -151,3 +151,37 @@ article .metadata p {
 .post {
   margin-top: 96px;
 }
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--text-secondary-color);
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
+.pagination {
+  margin: 48px 0px;
+}
+
+.pagination .item-left {
+  display: block;
+}
+
+.pagination .item-right {
+  display: block;
+  text-align: right;
+}

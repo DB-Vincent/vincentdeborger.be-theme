@@ -2,5 +2,21 @@
 <div class="post">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+
+    {{ if or .NextInSection .PrevInSection }}
+    <div class="pagination">
+        <span class="separator">Read more content</span>
+        {{ if .NextInSection }}
+        <a class="item-left" href="{{ .NextInSection.Permalink }}">
+            <span>← {{ .NextInSection.Title }}</span>
+        </a>
+        {{ end }}
+        {{ if .PrevInSection }}
+        <a class="item-right" href="{{ .PrevInSection.Permalink }}">
+            <span>{{ .PrevInSection.Title }} →</span>
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
 </div>
 {{ end }}
