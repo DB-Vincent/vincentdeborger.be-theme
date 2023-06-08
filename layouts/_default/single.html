@@ -1,6 +1,13 @@
 {{ define "main" }}
 <div class="post">
     <h1>{{ .Title }}</h1>
+    <div class="metadata">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>
+        <p >{{ .ReadingTime }} mins</p>
+    </div>     
+
     {{ .Content }}
 
     {{ if or .NextInSection .PrevInSection }}
