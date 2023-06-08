@@ -16,7 +16,11 @@
 {{ range first 5 (where ( where .Site.Pages.ByDate.Reverse "Type" "posts" ) ".Params.hidden" false) }}
 <a href="{{ .RelPermalink }}">
     <article>
-        <h2>{{ .Title }}</h3>
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>      
+        <h2>{{ .Title }}</h2>
+
         <p>{{ .Params.excerpt }}</p>
     </article>
 </a>

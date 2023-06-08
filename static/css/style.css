@@ -144,13 +144,12 @@ article h2, article p {
   margin: 0px;
 }
 
-article .metadata {
-  display: flex; 
-  align-items: center;
+article p {
+  margin-top: 8px;
 }
 
-article .metadata p {
-  margin-left: 10px;
+article time {
+  font-size: 0.9em;
 }
 
 .post {

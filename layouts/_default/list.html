@@ -3,14 +3,10 @@
 {{ range where .Pages.ByPublishDate.Reverse ".Params.hidden" false }}
 <a href="{{ .RelPermalink }}">
     <article>
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>      
         <h2>{{ .Title }}</h2>
-
-        <div class="metadata">
-            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-            <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>
-            <p >{{ .ReadingTime }} mins</p>
-        </div>        
 
         <p>{{ .Params.excerpt }}</p>
     </article>
