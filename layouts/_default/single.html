@@ -1,11 +1,14 @@
 {{ define "main" }}
 <div class="post">
     <h1>{{ .Title }}</h1>
+
+    {{ if .Type "posts" }}
     <div class="metadata">
         {{ $dateTime := .PublishDate.Format "2006-01-02" }}
         {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
         <p>Posted on <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>, {{ .ReadingTime }} mins reading time.</p>
     </div>     
+    {{ end }}
 
     {{ .Content }}
 
