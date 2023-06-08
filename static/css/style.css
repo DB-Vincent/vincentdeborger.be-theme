@@ -69,7 +69,7 @@ a {
   outline: none !important; 
 }
 
-code {
+code:not(.chroma code) {
   background-color: var(--bg-secondary-color);
   padding: 0px 2px;
 }
