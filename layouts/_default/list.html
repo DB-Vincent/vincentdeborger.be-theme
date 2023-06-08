@@ -8,8 +8,7 @@
         <div class="metadata">
             {{ $dateTime := .PublishDate.Format "2006-01-02" }}
             {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-            <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>
-            <p >{{ .ReadingTime }} mins</p>
+            <p>Posted on <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>, {{ .ReadingTime }} minsreading time.</p>
         </div>        
 
         <p>{{ .Params.excerpt }}</p>
