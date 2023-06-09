@@ -12,7 +12,7 @@
 
     {{ .Content }}
 
-    {{ if or .NextInSection .PrevInSection }}
+    {{ if and (or .NextInSection .PrevInSection) eq .Type "posts" }}
     <div class="pagination">
         <span class="separator">Read more content</span>
         {{ if .NextInSection }}
