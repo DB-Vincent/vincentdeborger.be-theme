@@ -2,7 +2,7 @@
   --bg-color: #000;
   --bg-secondary-color: #111;
   --text-primary-color: #a1a1a1;
-  --text-secondary-color: #6b7280;
+  --text-secondary-color: #7f7f80;;
   --accent-color: #3eb0ef;
   --visited-color: #7d013e;
 }
@@ -117,7 +117,7 @@ nav .items .item {
 
 .hero {
   margin: 200px 0px; 
-  color: var(--text-primary-color); 
+  color: var(--text-secondary-color); 
   font-size: 3rem; 
   line-height: 1.25;
 }
