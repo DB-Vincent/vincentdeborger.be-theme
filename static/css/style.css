@@ -156,6 +156,10 @@ article time {
   margin-top: 96px;
 }
 
+.post ul li ul li {
+  margin-left: 16px;
+}
+
 .separator {
   display: flex;
   align-items: center;
