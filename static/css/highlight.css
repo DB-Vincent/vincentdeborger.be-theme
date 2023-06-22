@@ -1,17 +1,19 @@
-/* Background */ .chroma { color: #e2e4e5; background-color: #282a36; margin: 8px 0px; }
+/* Highlight code block */ .highlight { margin: 24px 0px }
+/* Background */ .chroma { color: #e2e4e5; background-color: var(--bg-secondary-color); margin: 8px 0px; border-radius: 8px; }
 /* Other */ .chroma .x {  }
 /* Error */ .chroma .err { color: #ff5c57 }
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTableTD */ .chroma .lntd:last-of-type { width: 100% }
 /* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
-/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
-/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
-/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
-/* Keyword */ .chroma .k { color: #ff6ac1 }
-/* KeywordConstant */ .chroma .kc { color: #ff6ac1 }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%; background-color: color-mix(in srgb, var(--accent-color) 20%, transparent); }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.8em; color: var(--text-secondary-color) }
+/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: var(--text-secondary-color) }
+/* Keyword */ .chroma .k { color: var(--accent-color) }
+/* KeywordConstant */ .chroma .kc { color: var(--accent-color) }
 /* KeywordDeclaration */ .chroma .kd { color: #ff5c57 }
-/* KeywordNamespace */ .chroma .kn { color: #ff6ac1 }
-/* KeywordPseudo */ .chroma .kp { color: #ff6ac1 }
-/* KeywordReserved */ .chroma .kr { color: #ff6ac1 }
+/* KeywordNamespace */ .chroma .kn { color: var(--accent-color) }
+/* KeywordPseudo */ .chroma .kp { color: var(--accent-color) }
+/* KeywordReserved */ .chroma .kr { color: var(--accent-color) }
 /* KeywordType */ .chroma .kt { color: #9aedfe }
 /* Name */ .chroma .n {  }
 /* NameAttribute */ .chroma .na { color: #57c7ff }
@@ -28,7 +30,7 @@
 /* NameNamespace */ .chroma .nn {  }
 /* NameOther */ .chroma .nx {  }
 /* NameProperty */ .chroma .py {  }
-/* NameTag */ .chroma .nt { color: #ff6ac1 }
+/* NameTag */ .chroma .nt { color: var(--accent-color) }
 /* NameVariable */ .chroma .nv { color: #ff5c57 }
 /* NameVariableClass */ .chroma .vc { color: #ff5c57 }
 /* NameVariableGlobal */ .chroma .vg { color: #ff5c57 }
@@ -57,8 +59,8 @@
 /* LiteralNumberInteger */ .chroma .mi { color: #ff9f43 }
 /* LiteralNumberIntegerLong */ .chroma .il { color: #ff9f43 }
 /* LiteralNumberOct */ .chroma .mo { color: #ff9f43 }
-/* Operator */ .chroma .o { color: #ff6ac1 }
-/* OperatorWord */ .chroma .ow { color: #ff6ac1 }
+/* Operator */ .chroma .o { color: var(--accent-color) }
+/* OperatorWord */ .chroma .ow { color: var(--accent-color) }
 /* Punctuation */ .chroma .p {  }
 /* Comment */ .chroma .c { color: #78787e }
 /* CommentHashbang */ .chroma .ch { color: #78787e }

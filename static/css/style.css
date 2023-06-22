@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #000;
-  --bg-secondary-color: #111;
-  --text-primary-color: #a1a1a1;
-  --text-secondary-color: #7f7f80;;
-  --accent-color: #3eb0ef;
-  --visited-color: #7d013e;
+  --bg-color: rgb(0, 0, 0);
+  --bg-secondary-color: rgb(17, 18, 21);
+  --text-primary-color: rgb(161, 161, 161);
+  --text-secondary-color: rgb(127, 127, 128);;
+  --accent-color: rgb(62, 176, 239);
+  --visited-color: rgb(125, 1, 62);
 }
 
 html {
@@ -72,7 +72,7 @@ a {
 
 code:not(.chroma code) {
   background-color: var(--bg-secondary-color);
-  padding: 0px 2px;
+  padding: 2px 4px;
 }
 
 .post a {
@@ -178,7 +178,7 @@ article time {
 .separator::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid var(--text-secondary-color);
+  border-bottom: 2px solid var(--bg-secondary-color);
 }
 
 .separator:not(:empty)::before {
