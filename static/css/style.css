@@ -1,8 +1,8 @@
 :root {
-  --bg-color: rgb(0, 0, 0);
-  --bg-secondary-color: rgb(17, 18, 21);
-  --text-primary-color: rgb(161, 161, 161);
-  --text-secondary-color: rgb(127, 127, 128);;
+  --bg-color: rgb(10, 11, 14);
+  --bg-secondary-color: rgb(22, 25, 32);
+  --text-primary-color: rgb(161, 164, 169);
+  --text-secondary-color: rgb(109, 110, 119);
   --accent-color: rgb(62, 176, 239);
   --visited-color: rgb(125, 1, 62);
 }
@@ -61,7 +61,7 @@ body {
 .container {
   margin: 2em auto;
   padding: 0px 1em;
-  max-width: 80ch;
+  max-width: 700px;
 }
 
 a {
@@ -128,12 +128,61 @@ nav .items .item {
 }
 
 .subtitle {
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
   font-size: .875rem; 
   line-height: 1.25rem; 
-  text-transform: uppercase; 
   color: var(--text-secondary-color);
-  margin-top: 16px;
+}
+
+.post-list {
+  margin: 24px 0px;
+}
+
+.post-list ul {
+  display: flex; 
+  flex-direction: column;
+}
+
+.post-list ul:hover li {
+  transition: all 0.5s;
+  opacity: 0.5;
+}
+
+.post-list ul li:hover {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.post-list ul li {
+  display: flex; 
+  justify-content: flex-start; 
+  align-items: center; 
+  padding: 12px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .post-list ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    margin: 8px 0px;
+  }
+}
+
+.post-list ul li time {
+  align-self: flex-start;
+  min-width: 52px; 
+  margin-right: 32px;
+}
+
+.post-list ul li p {
+  margin-top: 0px;
+}
+
+.post-list ul li a span {
+  margin-top: 0px; 
+  font-size: 1.2rem; 
+  color: white; 
+  font-weight: 400;
 }
 
 article {
@@ -150,7 +199,15 @@ article p {
   margin-top: 8px;
 }
 
-article time {
+.metadata {
+  margin-bottom: 48px;
+}
+
+.metadata h1 {
+  line-height: 1.6;
+}
+
+.metadata p {
   font-size: 0.9em;
 }
 

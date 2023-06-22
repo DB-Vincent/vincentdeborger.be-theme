@@ -2,28 +2,49 @@
 {{ partialCached "index/introduction.html" . }}
 
 
-<span class="subtitle">Projects</span>
-{{ range (where .Site.RegularPages "Type" "projects") }}
+<!-- {{ range (where .Site.RegularPages "Type" "projects") }}
 <a href="{{ .RelPermalink }}">
     <article>
         <h2>{{ .Title }}</h3>
         <p>{{ .Params.description }}</p>
     </article>
 </a>
-{{ end }}
+{{ end }} -->
 
-<span class="subtitle">Recent posts</span>
-{{ range first 5 (where ( where .Site.Pages.ByDate.Reverse "Type" "posts" ) ".Params.hidden" false) }}
-<a href="{{ .RelPermalink }}">
-    <article>
-        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-        <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>      
-        <h2>{{ .Title }}</h2>
+<div class="post-list">
+    <span class="subtitle">Projects</span>
+    <ul>
+        {{ range (where .Site.RegularPages "Type" "projects") }}
+        <li>
+            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+            {{ $dateFormat := .Site.Params.dateFormat | default "2006" }}
+    
+            <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>   
+            <a href="{{ .RelPermalink }}">
+                <span>{{ .Title }}</span>
+                <p>{{ .Params.description }}</p>
+            </a>
+            
+        </li>
+        {{ end }}
+    </ul>
+</div>
 
-        <p>{{ .Params.excerpt }}</p>
-    </article>
-</a>
-{{ end }}
+<div class="post-list">
+    <span class="subtitle">Recent posts</span>
+    <ul>
+        {{ range first 5 (where ( where .Site.Pages.ByDate.Reverse "Type" "posts" ) ".Params.hidden" false) }}
+        <li>
+            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2" }}
+    
+            <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>   
+            <a href="{{ .RelPermalink }}">
+                <span>{{ .Title }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
 
 {{ end }}
