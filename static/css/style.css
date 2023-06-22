@@ -291,3 +291,30 @@ article p {
   display: block;
   text-align: right;
 }
+
+footer {
+  margin: 96px 0px 32px 0px;
+}
+
+footer hr {
+  height: 2px;
+  background-color: var(--bg-secondary-color);
+  border: none;
+}
+
+footer .rows {
+  display: flex; 
+  flex-direction: row;
+  margin-bottom: 12px;
+}
+
+footer .rows .cols {
+  display: flex; 
+  flex-direction: column; 
+  width: 33.3%;
+}
+
+footer a:hover {
+  color: white;
+  animation: all 0.5s;
+}
