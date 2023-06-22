@@ -1,10 +1,17 @@
 <nav>
-    <a href="{{ .Site.BaseURL }}/">
+    <a href="{{ .Site.BaseURL }}" class="logo">
         <span class="logo-top">Vincent De Borger</span>
         <span class="logo-bottom">DevOps Engineer</span>
     </a>
     <div class="items">
-        <a href="{{ .Site.BaseURL }}/posts" class="item">Posts</a>
-        <a href="{{ .Site.BaseURL }}/now" class="item">Now</a>
+        {{ $current := . }}
+        {{ range .Site.Menus.nav }}
+        {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+        {{ $active = or $active (eq .Name $current.Title) }}
+        {{ $active = or $active (and (eq (trim (path.Dir .URL) "/") $current.Section) (ne $current.Section "")) }}
+        {{ $active = or $active (and (eq .Name "Posts") (eq $current.Section "post")) }}
+        {{ $active = or $active (and (eq .Name "Now") (eq $current.Section "now")) }}
+        <a href="{{ .URL }}" class="item {{ if $active }}active{{ end }}">{{ .Name }}</a>
+        {{ end }}
     </div>
 </nav>

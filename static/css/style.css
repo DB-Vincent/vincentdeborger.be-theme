@@ -88,7 +88,7 @@ nav {
   justify-content: space-between;
 }
 
-nav a {
+nav .logo {
   padding: 4px 0px;
 }
 
@@ -112,8 +112,34 @@ nav .items {
 }
 
 nav .items .item {
-  margin-left: 40px; 
+  margin-left: 20px; 
   color: var(--text-primary-color);
+  padding: 6px 12px;
+}
+
+nav .items .item:hover {
+  transition: all 0.5s;
+  background-color: var(--bg-secondary-color);
+  border-radius: 8px;
+}
+
+nav .items .active {
+  background-color: var(--bg-secondary-color);
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  nav .logo {
+    display: none;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav .items .item {
+    margin: 0px 10px; 
+  }
 }
 
 .hero {
@@ -121,6 +147,13 @@ nav .items .item {
   color: var(--text-secondary-color); 
   font-size: 3rem; 
   line-height: 1.25;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    margin: 150px 0px;
+    font-size: 2.5rem;
+  }
 }
 
 .title {

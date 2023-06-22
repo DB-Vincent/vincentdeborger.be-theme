@@ -1,15 +1,17 @@
 {{ define "main" }}
-<div style="margin-top: 96px;"></div>
-{{ range where .Pages.ByPublishDate.Reverse ".Params.hidden" false }}
-<a href="{{ .RelPermalink }}">
-    <article>
-        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-        <time datetime="{{ $dateTime }}" style>{{ .PublishDate.Format $dateFormat }}</time>      
-        <h2>{{ .Title }}</h2>
-
-        <p>{{ .Params.excerpt }}</p>
-    </article>
-</a>
-{{ end }}
+<div class="post-list">
+    <ul>
+        {{ range where .Pages.ByPublishDate.Reverse ".Params.hidden" false }}
+        <li>
+            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2" }}
+    
+            <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>   
+            <a href="{{ .RelPermalink }}">
+                <span>{{ .Title }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
 {{ end }}
